@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+def minecraft_version = "1.12.2"
+version = "1.0"
+group = "mod.akrivus.weather"
+archivesBaseName = "RealTimeWeather"
+minecraft {
+    replace "@mcversion", minecraft_version
+    replace "@version", project.version
+    replaceIn "Revolution.java"
+    version = "1.12.2-14.23.4.2747"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+}
+processResources {
+    inputs.property "mcversion", minecraft_version
+    inputs.property "version", project.version
+    from (sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': minecraft_version
+    }
+    from (sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+compileJava {
+    sourceCompatibility = "1.8"
+	targetCompatibility = "1.8"
+}

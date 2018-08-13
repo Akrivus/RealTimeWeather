@@ -1,0 +1,16 @@
+[
+{
+  "modid": "realistic_weather",
+  "name": "Realistic Weather",
+  "description": "Realistic Weather syncs the weather in your current location with that of Minecraft, for a more real experience.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Akrivus"],
+  "credits": "Akrivus",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
